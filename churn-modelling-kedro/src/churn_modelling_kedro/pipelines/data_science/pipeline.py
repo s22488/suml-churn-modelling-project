@@ -7,7 +7,8 @@ from kedro.pipeline import Pipeline, pipeline, node
 from .nodes import train_model, test_model, split_data, save_model
 
 
-def create_pipeline(**kwargs) -> Pipeline:
+def create_pipeline() -> Pipeline:
+    """Create the data science pipeline."""
     return pipeline([
         node(
             func=split_data,
