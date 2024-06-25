@@ -17,7 +17,6 @@ Projekt korzysta z:
 * Kedro - zarządzanie danymi oraz pipeline'ami
 * Kedro Viz - wizualizacja pipeline'ów
 * AutoGluon - dostosowanie modeli
-* SDV - generator syntetycznych danych
 * Streamlit - prosty interfejs użytkownika
 
 ### Aktywacja środowiska wirtualnego: 
