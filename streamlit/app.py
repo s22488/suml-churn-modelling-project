@@ -1,10 +1,5 @@
-import pickle
-import urllib.request
 import pandas as pd
 import streamlit as st
-
-FAST_API_MODEL_URL = "http://127.0.0.1:8000/model_download"
-predictor = pickle.load(urllib.request.urlopen(FAST_API_MODEL_URL))
 
 st.set_page_config(page_title="Churn Prediction App")
 
@@ -57,9 +52,9 @@ with right:
         "NewTenure": [new_tenure],
     })
 
-    pred = predictor.predict(data)
-    s_confidence = predictor.predict_proba(data)
+    # pred = predictor.predict(data)
+    # s_confidence = predictor.predict_proba(data)
 
-    with prediction:
-        st.header("Will the person resign? {0}".format("Yes" if pred[0] == 1 else "No"))
-        st.subheader("Prediction confidence {0:.2f} %".format(s_confidence[pred[0]][0] * 100))
+    # with prediction:
+    #     st.header("Will the person resign? {0}".format("Yes" if pred[0] == 1 else "No"))
+    #     st.subheader("Prediction confidence {0:.2f} %".format(s_confidence[pred[0]][0] * 100))
