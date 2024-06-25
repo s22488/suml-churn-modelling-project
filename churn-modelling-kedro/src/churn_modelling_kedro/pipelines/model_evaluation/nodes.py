@@ -4,7 +4,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 
 
 def evaluate_model(predictions: pd.DataFrame,
-    project_name='Kedro-ASI-Test-Autogluon',
+    project_name='Kedro-SUML-Test-Autogluon',
     learning_rate=0.01,
     epochs=10,
     log_additional_info=True) -> (pd.DataFrame, pd.DataFrame):
