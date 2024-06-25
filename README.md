@@ -17,9 +17,6 @@ Projekt korzysta z:
 * Kedro - zarządzanie danymi oraz pipeline'ami
 * Kedro Viz - wizualizacja pipeline'ów
 * AutoGluon - dostosowanie modeli
-* WandDB - śledzenie i wizualizacja treningu modeli
-* SDV - generator syntetycznych danych
-* FastAPI - tworzenie API i interakcji z modelem
 * Streamlit - prosty interfejs użytkownika
 
 ### Aktywacja środowiska wirtualnego: 
@@ -75,8 +72,3 @@ cd churn-modelling-kedro
 kedro viz
 ```
 
-![kedro-pipeline.png](kedro-pipeline.png)
-
-## Architektura projektu
-
-![architecture.png](architecture.png)
