@@ -1,9 +1,9 @@
 """Streamlit frontend app"""
 
-import pandas as pd
-import streamlit as st
 import urllib.request
 import pickle
+import pandas as pd
+import streamlit as st
 
 fast_api_model_url = "http://127.0.0.1:8000/model_download"
 predictor = pickle.load(urllib.request.urlopen(fast_api_model_url))
