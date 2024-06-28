@@ -2,16 +2,20 @@
 This is a boilerplate pipeline 'data_engineering'
 generated using Kedro 0.19.5
 """
+
 from pandas import DataFrame, read_csv
 from sklearn.preprocessing import LabelEncoder
 
+
 def load_data() -> DataFrame:
+    """Load data from csv into dataset"""
     file_name = "churn-data.csv"
     dataset = read_csv(file_name)
     return dataset
 
+
 def process_data(df: DataFrame) -> DataFrame:
-    # Handle missing values
+    """Handle missing values"""
     df = df.dropna()  # drop rows with missing values
 
     # Feature engineering

@@ -2,9 +2,10 @@
 This is a boilerplate pipeline 'data_science'
 generated using Kedro 0.19.6
 """
+
 import pickle
 from typing import Tuple
-from pandas import concat,DataFrame
+from pandas import concat, DataFrame
 from autogluon.tabular import TabularPredictor, TabularDataset
 from sklearn.model_selection import train_test_split
 

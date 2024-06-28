@@ -1,9 +1,15 @@
+"""
+This is a boilerplate pipeline 'model_evaluation'
+generated using Kedro 0.19.6
+"""
+
 from pandas import DataFrame, crosstab
 
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 
 def evaluate_model(predictions: DataFrame) -> (DataFrame, DataFrame):
+    """Function to evaluate data model"""
     try:
         accuracy = accuracy_score(predictions['Exited'], predictions['Prediction'])
         precision = precision_score(predictions['Exited'], predictions['Prediction'])

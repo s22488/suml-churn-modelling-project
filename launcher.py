@@ -1,6 +1,6 @@
 import subprocess
-import requests
 import time
+import requests
 
 # Launch backend fast api
 backend_process = subprocess.Popen(["fastapi", "run", "fastapi/modelapi.py"])
@@ -9,7 +9,7 @@ backend_process = subprocess.Popen(["fastapi", "run", "fastapi/modelapi.py"])
 while True:
     try:
         # Check if the backend is ready by sending a request to an endpoint
-        response = requests.get("http://localhost:8000/")
+        response = requests.get("http://localhost:8000/", timeout=300)
         response.raise_for_status()
         if response.status_code == 200:
             break  # Backend is ready
@@ -18,4 +18,4 @@ while True:
     time.sleep(1)
 
 # Launch frontend after backend is done
-subprocess.run(["streamlit", "run", "streamlit/app.py"])
+subprocess.run(["streamlit", "run", "streamlit/app.py"], check=False)

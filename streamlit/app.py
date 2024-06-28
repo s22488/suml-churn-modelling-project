@@ -1,3 +1,5 @@
+"""Streamlit frontend app"""
+
 import pandas as pd
 import streamlit as st
 import urllib.request
@@ -5,7 +7,6 @@ import pickle
 
 fast_api_model_url = "http://127.0.0.1:8000/model_download"
 predictor = pickle.load(urllib.request.urlopen(fast_api_model_url))
-
 
 st.set_page_config(page_title="Churn Prediction App")
 
@@ -21,7 +22,9 @@ is_active_member_d = {0: "No", 1: "Yes"}
 with overview:
     st.title("Churn Prediction App")
     st.image(
-        "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1501167786227-4cba60f6d5"
+        "8f?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3"
+        "&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     )
 
 with left:

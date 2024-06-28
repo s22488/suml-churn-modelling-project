@@ -8,6 +8,7 @@ from .nodes import process_data, load_data
 
 
 def create_pipeline(**kwargs) -> Pipeline:
+    """Create the data engineering pipeline."""
     return pipeline([
         node(
             func=load_data,
