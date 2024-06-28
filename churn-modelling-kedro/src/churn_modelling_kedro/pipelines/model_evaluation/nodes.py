@@ -33,5 +33,3 @@ def evaluate_model(predictions: pd.DataFrame,
         print(f"KeyError: {e}. Ensure 'Exited' and 'Prediction' are in predictions_test.")
     except Exception as e:
         print(f"An error occurred: {e}")
-    finally:
-        run.finish()
