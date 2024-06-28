@@ -1,28 +1,22 @@
-import pandas as pd
+from pandas import DataFrame, crosstab
 
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
-def evaluate_model(predictions: pd.DataFrame,
-    project_name='Kedro-SUML-Test-Autogluon',
-    learning_rate=0.01,
-    epochs=10,
-    log_additional_info=True) -> (pd.DataFrame, pd.DataFrame):
 
+def evaluate_model(predictions: DataFrame) -> (DataFrame, DataFrame):
     try:
-    # Calculating metrics
-
         accuracy = accuracy_score(predictions['Exited'], predictions['Prediction'])
         precision = precision_score(predictions['Exited'], predictions['Prediction'])
         recall = recall_score(predictions['Exited'], predictions['Prediction'])
         f1 = f1_score(predictions['Exited'], predictions['Prediction'])
-        confusion_matrix = pd.crosstab(
+        confusion_matrix = crosstab(
             predictions['Exited'],
             predictions['Prediction'],
             rownames=['Actual'],
             colnames=['Predicted']
         )
 
-        return pd.DataFrame({
+        return DataFrame({
             'accuracy': [accuracy],
             'precision': [precision],
             'recall': [recall],
