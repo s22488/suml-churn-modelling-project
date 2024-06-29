@@ -58,11 +58,7 @@ deactivate
 ## Instalacja i uruchomienie
 
 ```bash
-pip install -r requirements.txt
-```
-
-```bash
-python launcher.py script
+docker compose up -d
 ```
 
 ## Wizualizacja pipeline'ów
