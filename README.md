@@ -18,16 +18,7 @@ Projekt korzysta z:
 * Kedro Viz - wizualizacja pipeline'ów
 * AutoGluon - dostosowanie modeli
 * Streamlit - prosty interfejs użytkownika
-
-### Aktywacja środowiska wirtualnego: 
-```bash
-source .venv/bin/activate
-```
-
-### Dezaktywacja środowiska wirtualnego: 
-```bash
-deactivate
-```
+* Docker - uruchomienie aplikacji
 
 ### Baza danych
 
@@ -56,6 +47,8 @@ deactivate
 * Exited: czy klient opuścił bank. (0 = Nie, 1 = Tak)
 
 ## Instalacja i uruchomienie
+
+Aby uruchomić projekt, klient musi mieć zainstalowanego Dockera.
 
 ```bash
 docker compose up -d
