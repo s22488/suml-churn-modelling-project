@@ -1,12 +1,11 @@
 """Streamlit frontend app"""
 
-import urllib.request
 import pickle
 import pandas as pd
 import streamlit as st
 
-fast_api_model_url = "http://127.0.0.1:8000/model_download"
-predictor = pickle.load(urllib.request.urlopen(fast_api_model_url))
+with open("churn-modelling-kedro/predictor.pkl", "rb") as file:
+    predictor = pickle.load(file)
 
 st.set_page_config(page_title="Churn Prediction App")
 
@@ -65,5 +64,6 @@ with right:
     s_confidence = predictor.predict_proba(data)
 
     with prediction:
-        st.header("Will the person resign? {0}".format("Yes" if pred[0] == 1 else "No"))
-        st.subheader("Prediction confidence {0:.2f} %".format(s_confidence[pred[0]][0] * 100))
+        st.header(f"Will the person resign? {'Yes' if pred[0] == 1 else 'No'}")
+        st.subheader(f"Prediction confidence {s_confidence[pred[0]][0] * 100:.2f} %")
+
